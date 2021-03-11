@@ -1,0 +1,329 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technical Documentation Page - freeCodeCamp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+
+    <!-- Bootstrap files (jQuery first, then Popper.js, then Bootstrap JS) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+        .backgroundImage {
+            Position:fixed;
+            Top: 50px;
+            left: 330px;
+            Bottom: 0px;
+            Width: 100vh;
+            Height: 100vh;
+            Opacity: 0.2;
+            Z-index: -5000;
+            
+        }
+        html,
+        body {
+            min-width: 280px;
+            font-family: 'RocknRoll One', Arial, sans-serif;
+            line-height: 1.5;
+        }
+        #navbar {
+            position: fixed;
+            min-width: 280px;
+            width: 260px;
+            height: 100%;
+            border-right: double;
+            background-color: rgba(238,238,238, 0.4);
+        }
+        header {
+            color: black;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: thin;
+        }
+        #main-doc header {
+            text-align: left;
+            margin: 0px;
+        }
+        #navbar ul {
+            height: 88%;
+            padding: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        #navbar li {
+            color: black;
+            border-top: 1px solid;
+            list-style: none;
+            position: relative;
+            width: 100%;
+        }
+        #navbar a {
+            display: block;
+            padding: 10px 30px;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #main-doc {
+            position: absolute;
+            margin-left: 310px;
+            padding: 20px;
+            margin-bottom: 110px;
+        }
+        section article {
+            color: black;
+            margin: 15px;
+            font-size: 0.96em;
+        }
+        section li {
+            margin: 15px 0px 0px 20px;
+        }
+        code {
+            display: block;
+            text-align: left;
+            white-space: pre-line;
+            position: relative;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 2;
+            background-color: rgb(238,238,238);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        @media only screen and (max-width: 815px) {
+            #navbar ul {
+                border: 1px solid;
+                height: 207px;
+            }
+            #navbar {
+                background-color: white;
+                position: absolute;
+                top: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-height: 275px;
+                border: none;
+                z-index: 1;
+                border-bottom: 2px solid;
+            }
+            #main-doc {
+                position: relative;
+                margin-left: 0px;
+                margin-top: 270px;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            #main-doc {
+                margin-left: -10px;
+            }
+            code {
+                margin-left: -20px;
+                width: 100%;
+                padding: 15px;
+                padding-left: 10px;
+                padding-right: 45px;
+                min-width: 233px;
+            }
+        }
+        #navbar .nav-link:hover  {
+            background-color: rgb(238,238,238);
+        }
+        .python-code {
+            width: auto;
+            background-color: #fff;
+            padding: 8px 12px;
+            border-left: 4px solid #4CAF50;
+            word-wrap: break-word;
+        }
+        .python-black, .w3-hover-black:hover {
+            color: #fff!important;
+            background-color: #000!important;
+        }
+    </style>
+</head>
+<body translate="no">
+    <div class="backgroundImage">
+        <img src="https://camo.githubusercontent.com/888e388801f947dec7c3d843942c277af25fe2b1aed1821542c4e711f210312a/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f632f63332f507974686f6e2d6c6f676f2d6e6f746578742e7376672f37363870782d507974686f6e2d6c6f676f2d6e6f746578742e7376672e706e67"/>
+    </div>
+    <nav id="navbar">
+        <header>Python Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#good_to_know">Good to know</a></li>
+            <li><a class="nav-link" href="#Hello_world">Hello world</a></li>
+            <li><a class="nav-link" href="#Variables">Variables</a></li>
+            <li><a class="nav-link" href="#Variable_names">Variable Names</a></li>
+            <li><a class="nav-link" href="#Global_variables">Global Variables</a></li>
+            <li><a class="nav-link" href="#JavaScript_and_Java">JavaScript and Java</a></li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+            </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <h4 id="article-main">What is Python?</h4>
+                <p>Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+                    It is used for:
+                </p>
+                <ul>
+                    <li>Web development (server-side)</li>
+                    <li>Software development.</li>
+                    <li>Mathematics.</li>
+                    <li>System scripting.</li>
+                </ul>
+                <h4 id="article-main">What can Python do?</h4>
+                <ul>
+                    <li>Python can be used on a server to create web applications.</li>
+                    <li>Python can be used alongside software to create workflows.</li>
+                    <li>Python can connect to database systems. It can also read and modify files.</li>
+                    <li>Python can be used to handle big data and perform complex mathematics.</li>
+                    <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
+                </ul>
+                <h4 id="article-main">Why Python?</h4>
+                <ul>
+                    <li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
+                    <li>Python has a simple syntax similar to the English language.</li>
+                    <li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li>
+                    <li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.</li>
+                    <li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="good_to_know">
+            <header>Good to know</header>
+            <article>
+                <ul>
+                    <li>The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular.</li>
+                    <li>In this tutorial Python will be written in a text editor. It is possible to write Python in an Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful when managing larger collections of Python files.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="Hello_world">
+            <header>Hello world</header>
+            <article>
+                <p>Python is an interpreted programming language, this means that as a developer you write Python (.py) files in a text editor and then put those files into the python interpreter to be executed.</p>
+                <p>The way to run a python file is like this on the command line:</p>
+                <div class="python-code notranslate python-black">
+                    C:\Users\<em>Your Name</em>&gt;python helloworld.py
+                </div>
+                <p>Where "helloworld.py" is the name of your python file.</p>
+                <p>Let's write our first Python file, called helloworld.py, which can be done in any text editor.</p>
+                <code>print("Hello, World!")</code>
+                <p>The output should read:</p>
+                <div class="python-code notranslate python-black">
+                    Hello, World!
+                </div>
+            </article>
+        </section>
+        <section class="main-section" id="Variables">
+            <header>Variables</header>
+            <p>Variables are containers for storing data values, Python has no command for declaring a variable.</p>
+            <p>A variable is created the moment you first assign a value to it.</p>
+            <p>Example:</p>
+            <code>
+                <div class="python-code notranslate">x = 5
+                    y = "Jorge"
+                    print(x)
+                    print(y)
+                </div>
+            </code>
+        </section>
+        <section class="main-section" id="Variable_names">
+            <header>Variable Names</header>
+            <p>A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). Rules for Python variables:</p>
+            <ul>
+                <li>A variable name must start with a letter or the underscore character.</li>
+                <li>A variable name cannot start with a number.</li>
+                <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ).</li>
+                <li>Variable names are case-sensitive (age, Age and AGE are three different variables).</li>
+            </ul>
+            <p>Example:(Legal variable names:)</p>
+            <code>
+                <div class="python-code notranslate">myvar = "Jorge"
+                    my_var = "Jorge"
+                    _my_var = "Jorge"
+                    myVar = "Jorge"
+                    MYVAR = "Jorge"
+                    myvar2 = "Jorge"
+                </div>
+            </code>
+            <p>Example:(Ilegal variable names:)</p>
+            <code>
+                <div class="python-code notranslate">2myvar = "Jorge"
+                    my-var = "Jorge"
+                    my var = "Jorge"
+                </div>
+            </code>
+            </article>
+        </section>
+        <section class="main-section" id="Global_variables">
+            <header>Global Variables</header>
+            <p>Variables that are created outside of a function (as in all of the examples above) are known as global variables.</p>
+            <p>Global variables can be used by everyone, both inside of functions and outside.</p>
+            <p>Example:</p>
+            <p>Create a variable outside of a function, and use it inside the function.</p>
+            <code>
+                <div class="python-code notranslate">x = "awesome"
+
+                    def myfunc():
+                        print("Python is " + x)
+                    
+                    myfunc()
+                </div>
+            </code>
+            <p>f you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value.</p>
+            <p>Example:</p>
+            <p>Create a variable inside a function, with the same name as the global variable.</p>
+            <code>
+                <div class="python-code notranslate">x = "awesome"
+
+                    def myfunc():
+                        x = "fantastic"
+                        print("Python is " + x)
+                    
+                    myfunc()
+                    
+                    print("Python is " + x)
+                </div>
+            </code>
+            </article>
+        </section>
+        <section class="main-section" id="JavaScript_and_Java">
+            <header>JavaScript and Java</header>
+            <article>
+                <p>JavaScript is a dynamic computer programming language. It is lightweight and most commonly used as a part of web pages, whose implementations allow a client-side script to interact with the user and make dynamic pages.</p>
+                <p>Java programming language was originally developed by Sun Microsystems which was initiated by James Gosling and released in 1995 as a core component of Sun Microsystems' Java platform (Java 1.0 [J2SE]).</p>
+                <p>Here are the differences:</p>
+                <ul>
+                    <li>The JavaScript programming language is developed by Netscape, Inc and not part of the Java platform.</li>
+                    <li>Java applications are run in a virtual machine or web browser while JavaScript is run on a web browser.</li>
+                    <li>Java code is compiled whereas while JavaScript code is in text and in a web page.</li>
+                    <li>JavaScript is an OOP scripting language, whereas Java is an OOP programming language.</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <article>
+                <ul>
+                    <li>
+                        All the documentation in this page is taken from
+                        <a href="https://www.w3schools.com/python" target="_blank">w3schools.com</a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
